@@ -6,15 +6,19 @@ CREATE TABLE riddles (
     roomId INT NOT NULL
 );
 
--- Let op, dit is een voorbeeld!
 INSERT INTO riddles (riddle, answer, hint, roomId)
 VALUES
-    ('Welke Pokémon is nummer 25 in de Pokédex?', 'Pikachu', 'Het is de mascotte van Pokémon.', 1),
-    ('Wat is het type van Charmander?', 'Vuur', 'Denk aan zijn vlammende staart.', 1),
-    ('Hoe heet de evolutie van Bulbasaur?', 'Ivysaur', 'Het zit tussen Bulbasaur en Venusaur.', 1),
-    ('Wat gebeurt er als Magikarp level 20 bereikt?', 'Gyarados', 'Van nutteloos naar legendarisch!', 2),
-    ('Wat is super effectief tegen een water-type Pokémon?', 'Gras', 'Denk aan elementaire logica: wat groeit in water?', 2),
-    ('Welke legendarische vogel hoort bij het element ijs?', 'Articuno', 'Zijn naam begint met "Arti...".', 2),
-    ('Wat is de naam van de professor in de eerste Pokémon-games?', 'Professor Oak', 'Hij deelt je eerste Pokémon uit.', 3),
-    ('Welke kleur heeft shiny Charizard?', 'Zwart', 'Anders dan zijn originele oranje kleur.', 3),
-    ('Wat gebruik je om een wilde Pokémon te vangen?', 'Pokéball', 'Je gooit het naar een Pokémon.', 3);
+-- Room 1 (roomId = 1)
+('I have cities, but no houses. I have mountains, but no trees. I have water, but no fish. What am I?', 'map', 'paper', 1),
+('The more you take, the more you leave behind. What are they?', 'footsteps', 'walking', 1),
+('I can be cracked, made, told, and played. What am I?', 'joke', 'funny', 1),
+
+-- Room 2 (roomId = 2)
+('I am not alive, but I grow. I do not have lungs, but I need air. I do not have a mouth, but water kills me. What am I?', 'fire', 'heat', 2),
+('I go up, but never come down. What am I?', 'age', 'time', 2),
+('I can fill a room but take up no space. What am I?', 'light', 'lamp', 2),
+
+-- Room 3 (roomId = 3)
+('I have many teeth, but I cannot bite. What am I?', 'comb', 'hair', 3),
+('If you drop me, I will crack. If you smile at me, I will smile back. What am I?', 'mirror', 'reflection', 3),
+('I am always in front of you but cannot be seen. What am I?', 'future', 'tomorrow', 3);
