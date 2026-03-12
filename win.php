@@ -19,16 +19,16 @@
          
         }
 
-        .content button{
-            color: #B8860B;
-            font-size: 30px;
-            border: none;
-            border-radius: 60px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-             transition: 0.3s;
-           
-
-        }
+        #play{
+        position: center;
+          padding: 12px 18px;
+          background: #ff8c00;
+             color: #fff;
+      border-radius: 8px;
+         font-weight: bold;
+         width: 250px;
+         text-decoration: none;
+     }
         
     </style>
     <meta charset="UTF-8">
@@ -38,7 +38,7 @@
 <body>
     <div class="content">
         <h1> "Gefeliciteerd! Je hebt gewonnen!"</h1>
-        <button onclick="restartGame()" class="restart"> Restart</button>
+        <a id="play" href="/SAAD-WALEED/index.php">Restart</a>
          
     </div>
      <script src="Room.js" ></script>

@@ -23,17 +23,17 @@
 }
 
 .thumbnail{
-  width: 520px;      
+  width: 500px;      
   max-width: 45vw;   
   height: auto;
   border-radius: 100px;
-  box-shadow: 0 120px 400px rgba(0,0,0,0.5);
+  box-shadow: 0 120px 400px rgba(214, 82, 82, 0.5);
   
 
 }
 
 body{
-  background-image:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../background.png");
+  background-image: url("/SAAD-WALEED/background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -43,7 +43,7 @@ body{
 
 .play-btn{
 
-  
+  position: center;
   padding: 12px 18px;
   background: #ff8c00;
   color: #fff;

@@ -4,7 +4,7 @@ let riddle3Solved = false;
 
 function checkAllCorrect() {
     if (riddle1Solved && riddle2Solved && riddle3Solved) {
-        window.location.href = "/SAAD-WALEED/rooms/room-2.php";
+        window.location.href = "/SAAD-WALEED/win.php";
     }
 }
 

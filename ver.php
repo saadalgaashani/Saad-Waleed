@@ -33,11 +33,14 @@
 
  
      #play{
-         background-color: #978b20;
-          border-radius: 8px;
-           text-decoration: none;
-           font-size: 50px
-         
+        position: center;
+          padding: 12px 18px;
+          background: #ff8c00;
+             color: #fff;
+      border-radius: 8px;
+         font-weight: bold;
+         width: 250px;
+         text-decoration: none;
      }
         
         

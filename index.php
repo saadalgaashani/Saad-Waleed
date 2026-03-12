@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spy Escape Room</title>
-  <link rel="stylesheet" href="./css/style.css">
+   <link rel="stylesheet" href="/SAAD-WALEED/css/home.css">
 </head>
 
 <body>
@@ -21,13 +21,15 @@
       <br> Voordat de politie binnenkomt en voordat het huis gevaarlijk wordt door mysterieuze krachten.
     </p>
 
-    <p>Via deze pagina gaat een team naar de Escap room</p>
+    <p>Via deze pagina gaat een team naar de Escap room</p> <br>
 
-    <a class="play-btn" href="./rooms/room_1.php">NU Spelen!</a>
+    <a class="play-btn" href="/SAAD-WALEED/rooms/room-1.php">NU Spelen!</a>
   </div>
 
-  <img src="thumbnai.png" class="thumbnail" alt="Spy Escape Room">
+  <img src="/SAAD-WALEED/thumbnai.png" class="thumbnail" alt="Spy Escape Room">
+
 </div>
+
 
 </body>
 
