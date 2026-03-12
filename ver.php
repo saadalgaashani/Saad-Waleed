@@ -3,41 +3,54 @@
 <head>
     <style>
         body{
-            background-image:url('images.jpeg');
+            background-image:url('o.jpg');
+            
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
             
         }
-
-        .content{
+         .content{
             text-align: center;
             padding-top: 450px;
-            color: #B8860B;
+            color:white ;
             font-size: 40px;
          
         }
 
         .content button{
-            color: #B8860B;
-            font-size: 30px;
+            color:black;
+            font-size: 40px;
             border: none;
             border-radius: 60px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            
              transition: 0.3s;
 
         }
+
+        
+
+ 
+     #play{
+         background-color: #978b20;
+          border-radius: 8px;
+           text-decoration: none;
+           font-size: 50px
+         
+     }
+        
         
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="ver.php" defer></script>
     <title>Document</title>
 </head>
 <body>
     <div class="content">
-        <h1> "Gefeliciteerd! Je hebt gewonnen!"</h1>
-        <button >Restart Game </button>
+        <h1>  "Helaas, volgende keer beter!" </h1>
+        <a id="play" href="/SAAD-WALEED/rooms/room-1.php">Restart</a>
          
     </div>
 </body>
