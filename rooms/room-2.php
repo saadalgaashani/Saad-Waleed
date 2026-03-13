@@ -24,63 +24,73 @@ try {
 </head>
 
 <body>
+  
 
-<h1>Find alle the 3 way to escape</h1>
+<div class="room">
+<h1>Find the three ghosts in time</h1>
 
- <!-- eerste raadsel -->
+<img src="/Saad-Waleed/room-2f.png" alt="Room-2-Foto">
+<!-- eerste raadsel -->
 
-<div id="secretSpot1"></div>
+<button id="secretSpot1"></button>
 
 <div class="riddle-container1" id="riddleBox1">
-  <p><?= $riddles[0]['riddle']; ?></p>
-  <button id="submitAnswer1">Submit</button>
-  <input type="text" id="answerInput1"  placeholder="Write your answer">
-  <p id="result1"></p>
 
-  <script>
+<p><?= $riddles[0]['riddle']; ?></p>
+
+<input type="text" id="answerInput1" placeholder="Write your answer">
+<button id="submitAnswer1">Submit</button>
+
+<p id="result1"></p>
+
+<script>
 const correctAnswer1 = "<?= $riddles[0]['answer']; ?>";
 </script>
 
 </div>
 
 
-
- <!-- tweede raadsel -->
-
+<!-- tweede raadsel -->
 
 <div id="secretSpot2"></div>
-  
-<div class="riddle-container2" id="riddleBox2">
-  <p><?= $riddles[1]['riddle']; ?></p>
-  <button id="submitAnswer2">Submit</button>
-  <input type="text" id="answerInput2"  placeholder="Write your answer">
-  <p id="result2"></p>
 
-  <script>
+<div class="riddle-container2" id="riddleBox2">
+
+<p><?= $riddles[1]['riddle']; ?></p>
+
+<input type="text" id="answerInput2" placeholder="Write your answer">
+<button id="submitAnswer2">Submit</button>
+
+<p id="result2"></p>
+
+<script>
 const correctAnswer2 = "<?= $riddles[1]['answer']; ?>";
 </script>
 
 </div>
 
- <!-- derde raadsel -->
-  
 
- <div id="secretSpot3"></div>
-  
+<!-- derde raadsel -->
+
+<div id="secretSpot3"></div>
+
 <div class="riddle-container3" id="riddleBox3">
-  <p><?= $riddles[2]['riddle']; ?></p>
-  <button id="submitAnswer3">Submit</button>
-  <input type="text" id="answerInput3"  placeholder="Write your answer">
-  <p id="result3"></p>
 
-  <script>
+<p><?= $riddles[2]['riddle']; ?></p>
+
+<input type="text" id="answerInput3" placeholder="Write your answer">
+<button id="submitAnswer3">Submit</button>
+
+<p id="result3"></p>
+
+<script>
 const correctAnswer3 = "<?= $riddles[2]['answer']; ?>";
 </script>
 
 </div>
+<div id="timer">02:00</div>
 
-
-<p id="timer">02:00</p>
+</div>
 
 
 
