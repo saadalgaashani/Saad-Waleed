@@ -16,14 +16,14 @@ try {
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Escape Room 1</title>
-   <link rel="stylesheet" href="/SAAD-WALEED/css/room-1.css">
-   <script src="/SAAD-WALEED/js/room-1.js" defer></script>
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Escape Room 1</title>
 
-<body>
+<link rel="stylesheet" href="/SAAD-WALEED/css/room-1.css">
+<script src="/SAAD-WALEED/js/room-1.js" defer></script>
+
+</head>
 
 <body>
 
@@ -36,11 +36,11 @@ try {
 <button id="secretSpot1"></button>
 
 <div class="riddle-container1" id="riddleBox1">
-  
+
 <p><?= $riddles[0]['riddle']; ?></p>
 
-<button id="submitAnswer1">Submit</button>
 <input type="text" id="answerInput1" placeholder="Write your answer">
+<button id="submitAnswer1">Submit</button>
 
 <p id="result1"></p>
 
@@ -59,8 +59,8 @@ const correctAnswer1 = "<?= $riddles[0]['answer']; ?>";
 
 <p><?= $riddles[1]['riddle']; ?></p>
 
-<button id="submitAnswer2">Submit</button>
 <input type="text" id="answerInput2" placeholder="Write your answer">
+<button id="submitAnswer2">Submit</button>
 
 <p id="result2"></p>
 
@@ -79,8 +79,8 @@ const correctAnswer2 = "<?= $riddles[1]['answer']; ?>";
 
 <p><?= $riddles[2]['riddle']; ?></p>
 
-<button id="submitAnswer3">Submit</button>
 <input type="text" id="answerInput3" placeholder="Write your answer">
+<button id="submitAnswer3">Submit</button>
 
 <p id="result3"></p>
 
@@ -93,6 +93,9 @@ const correctAnswer3 = "<?= $riddles[2]['answer']; ?>";
 </div>
 
 <div id="timer">02:00</div>
+
+</body>
+</html>
 
 </body>
 
