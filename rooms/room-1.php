@@ -27,10 +27,11 @@ try {
 
 <body>
 
-<h1>Find the three ghosts in time</h1>
 
 <div class="room">
+<h1>Find the three ghosts in time</h1>
 
+<img src="/Saad-Waleed/room-1.png" alt="Room-1-Foto">
 <!-- eerste raadsel -->
 
 <button id="secretSpot1"></button>
@@ -89,10 +90,11 @@ const correctAnswer3 = "<?= $riddles[2]['answer']; ?>";
 </script>
 
 </div>
+<div id="timer">02:00</div>
 
 </div>
 
-<div id="timer">02:00</div>
+
 
 </body>
 </html>
