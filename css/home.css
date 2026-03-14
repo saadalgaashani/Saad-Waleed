@@ -1,54 +1,97 @@
-
-.home{
-  width: min(1100px, 90%);
-  margin: 60px auto;
-  display: flex;
-  gap: 40px;
-  align-items: center;
-  justify-content: space-between;
-}
-.text{
-  max-width: 520px;  
-  color: #fff;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.85);
-}
-.text h1{
-  margin: 0 0 12px;
-  font-size: 42px;
-}
-.description{
-  font-size: 16px;
-  line-height: 2;
-  margin: 0 0 14px;
-}
-
-.thumbnail{
-  width: 500px;      
-  max-width: 45vw;   
-  height: auto;
-  border-radius: 100px;
-  box-shadow: 0 120px 400px rgba(214, 82, 82, 0.5);
-  
-
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-  background-image: url("/SAAD-WALEED/background.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
+font-family:Arial, Helvetica, sans-serif;
+
+background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+url("/SAAD-WALEED/background.png");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.home{
+width:min(1100px,90%);
+display:flex;
+gap:50px;
+align-items:center;
+justify-content:space-between;
+}
+
+.text{
+max-width:520px;
+color:white;
+text-shadow:0 2px 8px rgba(0,0,0,0.85);
+}
+
+.text h1{
+font-size:42px;
+margin-bottom:20px;
+}
+
+.description{
+font-size:18px;
+line-height:1.8;
+margin-bottom:20px;
+}
+
+.team-text{
+margin-bottom:25px;
+font-size:16px;
 }
 
 .play-btn{
+display:inline-block;
 
-  position: center;
-  padding: 12px 18px;
-  background: #ff8c00;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  
+padding:16px 40px;
+
+background:#ff8c00;
+color:white;
+
+text-decoration:none;
+font-size:20px;
+font-weight:bold;
+
+border-radius:10px;
+
+box-shadow:0 0 10px black;
+
+transition:0.3s;
+}
+
+.play-btn:hover{
+background:#e67e00;
+transform:scale(1.05);
+}
+
+.thumbnail{
+width:500px;
+max-width:45vw;
+
+border-radius:20px;
+
+box-shadow:0 0 40px rgba(255,140,0,0.6);
+}
+
+@media (max-width:900px){
+
+.home{
+flex-direction:column;
+text-align:center;
+}
+
+.thumbnail{
+max-width:80%;
+}
+
 }

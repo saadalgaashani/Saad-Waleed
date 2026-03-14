@@ -14,7 +14,7 @@ VALUES
 ('I can be cracked, made, told, and played. What am I?', 'joke', 'funny', 1),
 
 -- Room 2 (roomId = 2)
-('I am not alive, but I grow. I do not have lungs, but I need air. I do not have a mouth, but water kills me. What am I?', '', 'heat', 2),
+('I am not alive, but I grow. I do not have lungs, but I need air. I do not have a mouth, but water kills me. What am I?', 'fire', 'heat', 2),
 ('I go up, but never come down. What am I?', 'age', 'time', 2),
 ('I can fill a room but take up no space. What am I?', 'light', 'lamp', 2),
 
