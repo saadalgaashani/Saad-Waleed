@@ -23,6 +23,9 @@ try {
 <link rel="stylesheet" href="/SAAD-WALEED/css/room-1.css">
 <script src="/SAAD-WALEED/js/room-1.js" defer></script>
 
+<link href="https://fonts.googleapis.com/css2?family=Bpmf+Huninn&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+
+
 </head>
 
 <body>

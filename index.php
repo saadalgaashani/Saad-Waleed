@@ -7,6 +7,7 @@
 <title>Spy Escape Room</title>
 
 <link rel="stylesheet" href="/SAAD-WALEED/css/home.css">
+<link href="https://fonts.googleapis.com/css2?family=Bpmf+Huninn&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
 
 </head>
 

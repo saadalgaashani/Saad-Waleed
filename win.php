@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>You Win</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bpmf+Huninn&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+
 
   <style>
     * {
@@ -13,18 +15,23 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-    }
+font-family: "Bpmf Huninn", sans-serif;
+  font-weight: 400;
+  font-style: normal;    }
 
     .win {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-                        url("/SAAD-WALEED/images.jpeg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      position:relative;
+  width:100vw;
+  height:100vh;
+  overflow:hidden
+    }
+
+    .win img{
+       width:100%;
+  height:100%;
+  display:block;
+
+
     }
 
     .content {
@@ -76,11 +83,14 @@
 <body>
 
   <div class="win">
+    <img src="/SAAD-WALEED/winpagina.jpeg" alt="winner foto">
+
     <div class="content">
       <h1>Gefeliciteerd! Je hebt gewonnen!</h1>
       <a id="play" href="/SAAD-WALEED/index.php">Back to home</a>
     </div>
   </div>
+  
 
   <script src="Room.js"></script>
 </body>

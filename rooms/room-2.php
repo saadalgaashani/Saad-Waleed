@@ -21,13 +21,16 @@ try {
   <title>Escape Room 2</title>
    <link rel="stylesheet" href="/SAAD-WALEED/css/room-2.css">
    <script src="/SAAD-WALEED/js/room-2.js" defer></script>
+
+   <link href="https://fonts.googleapis.com/css2?family=Bpmf+Huninn&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
   
 
 <div class="room">
-<h1>Find the three ghosts in time</h1>
+<h1>Find the three escape ways in time</h1>
 
 <img src="/Saad-Waleed/room-2f.png" alt="Room-2-Foto">
 <!-- eerste raadsel -->

@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>You Lost</title>
+<link href="https://fonts.googleapis.com/css2?family=Bpmf+Huninn&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -14,21 +15,25 @@ box-sizing:border-box;
 }
 
 body{
-font-family: Arial, Helvetica, sans-serif;
-}
+font-family: "Bpmf Huninn", sans-serif;
+  font-weight: 400;
+  font-style: normal;}
 
 .lose{
 position:relative;
-width:100%;
-height:100vh;
-
-background-image:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-url("o.jpg");
-
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
+  width:100vw;
+  height:100vh;
+  overflow:hidden
 }
+
+.lose img{
+ width:100%;
+  height:100%;
+  display:block;
+
+
+}
+
 
 .content{
 position:absolute;
@@ -83,6 +88,7 @@ padding:12px 24px;
 <body>
 
 <div class="lose">
+    <img src="/SAAD-WALEED/verpagina.jpg" alt="verlies foto">
 
 <div class="content">
 <h1>Helaas, volgende keer beter!</h1>
