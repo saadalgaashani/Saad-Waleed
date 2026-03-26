@@ -1,15 +1,32 @@
 <?php
+session_start();
 require_once('../dbcon.php');
+
+// هذا مهم جداً 👇
+if (!isset($_SESSION['start_time'])) {
+    $_SESSION['start_time'] = time();
+}
+
+if (!isset($_SESSION['team_id'])) {
+  header("Location: /SAAD-WALEED/index.php");
+  exit;
+}
 
 try {
   $stmt = $db_connection->query("SELECT * FROM riddles WHERE roomId = 2");
   $riddles = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+  $teamStmt = $db_connection->prepare("SELECT * FROM teams WHERE id = :id");
+  $teamStmt->execute([':id' => $_SESSION['team_id']]);
+  $team = $teamStmt->fetch(PDO::FETCH_ASSOC);
+
+  if (!$team) {
+    die("Team niet gevonden.");
+  }
+
 } catch (PDOException $e) {
   die("Databasefout: " . $e->getMessage());
-
 }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +37,7 @@ try {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Escape Room 2</title>
    <link rel="stylesheet" href="/SAAD-WALEED/css/room-2.css">
-   <script src="/SAAD-WALEED/js/room-2.js" defer></script>
+  <script src="/SAAD-WALEED/js/room-2.js?versie=1" defer></script>
 
    <link href="https://fonts.googleapis.com/css2?family=Bpmf+Huninn&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
 
@@ -30,6 +47,14 @@ try {
   
 
 <div class="room">
+  <div class="team-box">
+  <h3>Team info</h3>
+  <p><strong>Team:</strong> <?= htmlspecialchars($team['team_name']); ?></p>
+  <p><?= htmlspecialchars($team['member1']); ?></p>
+  <p><?= htmlspecialchars($team['member2']); ?></p>
+  <p><?= htmlspecialchars($team['member3']); ?></p>
+</div>
+
 <h1>Find the three escape ways in time</h1>
 
 <img src="/Saad-Waleed/room-2f.png" alt="Room-2-Foto">

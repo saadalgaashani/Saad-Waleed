@@ -1,7 +1,4 @@
-<!-- Op deze pagina zie je alle raadsels in een tabel.
-     Je ziet per raadsel: de raadsel, het antwoord, de hint en bij welke room die hoort (roomID).
- -->
- <?php
+<?php
 session_start();
 require_once('dbcon.php');
 
@@ -11,19 +8,16 @@ if (!isset($_SESSION['team_id']) || !isset($_SESSION['start_time'])) {
     exit;
 }
 
-// 2. Tijd correct berekenen in seconden
-$end_time = time(); // Huidige tijd in seconden
-
-// Controleer of start_time een datum/tijd tekst is, zet dit dan om naar seconden
+// 2. Tijd berekenen
+$end_time = time(); 
 $start_time_seconds = is_numeric($_SESSION['start_time']) ? $_SESSION['start_time'] : strtotime($_SESSION['start_time']);
 $time_taken = $end_time - $start_time_seconds;
 
-// Zorg ervoor dat de tijd nooit negatief is bij een foutje
 if ($time_taken < 0) {
     $time_taken = 0;
 }
 
-// 3. Sla de tijd op in de database
+// 3. Opslaan in database
 try {
     $stmt = $db_connection->prepare("
         UPDATE teams 
@@ -37,10 +31,10 @@ try {
     ]);
 
 } catch (PDOException $e) {
-    die("Database Error: " . $e->getMessage());
+    die("FOUT BIJ OPSLAAN: " . $e->getMessage());
 }
 
-// 4. Stuur de speler naar de juiste pagina
+// 4. Automatisch doorsturen
 if (isset($_GET['result']) && $_GET['result'] === 'win') {
     header("Location: win.php");
 } else {

@@ -1,0 +1,10 @@
+CREATE TABLE teams (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  team_name VARCHAR(100) NOT NULL,
+  member1 VARCHAR(100) NOT NULL,
+  member2 VARCHAR(100) NOT NULL,
+  member3 VARCHAR(100) DEFAULT NULL,
+  start_time DATETIME NOT NULL,
+  end_time INT,
+  time_score INT
+);

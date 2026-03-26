@@ -91,10 +91,16 @@ let countdown = setInterval(function() {
 
     if (totalTime < 0) {
         clearInterval(countdown);
-        window.location.href = "/SAAD-WALEED/ver.php";
+        window.location.href = "/SAAD-WALEED/save_score.php?result=lose";
     }
 }, 1000);
 
 function restartGame() {
     window.location.href = "/SAAD-WALEED/room-1.php";
 }
+
+
+
+
+
+

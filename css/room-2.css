@@ -115,10 +115,26 @@ display:none;
 .riddle-container3{
 position:absolute;
 top:15%;
-left:50%;
+left:18%;
 background-color:white;
 padding:20px;
 border-radius:12px;
 width:250px;
 display:none;
+}
+
+
+
+
+
+.team-box {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    width: 220px;
+    z-index: 1000;
 }

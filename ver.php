@@ -1,3 +1,33 @@
+<?php   
+session_start();
+require_once('dbcon.php');
+
+// Stuur terug als er geen team is
+if (!isset($_SESSION['team_id'])) {
+  header("Location: index.php");
+  exit;
+}
+
+// Haal de gegevens van dit team op uit de database
+try {
+  $teamStmt = $db_connection->prepare("SELECT * FROM teams WHERE id = :id");
+  $teamStmt->execute([':id' => $_SESSION['team_id']]);
+  $team = $teamStmt->fetch(PDO::FETCH_ASSOC);
+
+  if (!$team) {
+    die("Team niet gevonden.");
+  }
+} catch (PDOException $e) {
+  die("Databasefout: " . $e->getMessage());
+}
+
+// Zet de seconden uit de database om naar een mooie tijd (bijv. 02:45)
+$tijd_in_seconden = $team['time_score'] ?? 0;
+$minuten = floor($tijd_in_seconden / 60);
+$seconden = $tijd_in_seconden % 60;
+$geformatteerde_tijd = sprintf("%02d:%02d", $minuten, $seconden);
+?>
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -82,12 +112,33 @@ padding:12px 24px;
 
 }
 
+
+.team-box {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    width: 220px;
+    z-index: 1000;
+}
+
 </style>
 </head>
 
 <body>
 
 <div class="lose">
+<div class="team-box">
+      <h3>Team info</h3>
+      <p><strong>Time:</strong> <?= $geformatteerde_tijd; ?></p>
+      <p><strong>Team:</strong> <?= htmlspecialchars($team['team_name']); ?></p>
+      <p><?= htmlspecialchars($team['member1']); ?></p>
+      <p><?= htmlspecialchars($team['member2']); ?></p>
+      <p><?= htmlspecialchars($team['member3']); ?></p>
+    </div>
     <img src="/SAAD-WALEED/verpagina.jpg" alt="verlies foto">
 
 <div class="content">
