@@ -50,6 +50,7 @@ $_SESSION['start_time'] = strtotime($team['start_time']); // in seconden
 
 <div class="room">
   <div class="team-box">
+    <!-- team  mooie -->
     <h3>Team info</h3>
     <p><strong>Team:</strong> <?= htmlspecialchars($team['team_name']); ?></p>
     <p><?= htmlspecialchars($team['member1']); ?></p>

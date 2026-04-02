@@ -23,7 +23,7 @@ if ($time_taken < 0) {
     $time_taken = 0;
 }
 
-// 3. Sla de tijd op in de database
+//  Sla de tijd op in de database
 try {
     $stmt = $db_connection->prepare("
         UPDATE teams 

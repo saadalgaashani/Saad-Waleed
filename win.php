@@ -133,7 +133,7 @@ $geformatteerde_tijd = sprintf("%02d:%02d", $minuten, $seconden);
     <img src="/SAAD-WALEED/winpagina.jpeg" alt="winner foto">
 
     <div class="content">
-      <h1>Gefeliciteerd! Je hebt gewonnen!</h1>
+      <h1>Congratulations! You have won!</h1>
       <a id="play" href="/SAAD-WALEED/index.php">Back to home</a>
     </div>
   </div>

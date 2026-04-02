@@ -16,16 +16,16 @@
 
     <div class="text">
 
-        <h1>Welkom bij de Spy Escape Room!</h1>
+        <h1>Welcome to the Spy Escape Room!</h1>
 
         <p class="description">
-            De escape room speelt zich af in een oud en verlaten huis waar een spion zich verstopt nadat hij geheime informatie heeft gestolen.<br><br>
-            De politie heeft hem gevolgd en staat nu buiten het huis te wachten om hem te arresteren.<br><br>
-            De speler moet binnen 5 minuten verschillende puzzels oplossen om een geheime uitgang te vinden en te ontsnappen voordat de politie binnenkomt.
+            The escape room takes place in an old and abandoned house where a spy is hiding after stealing secret information.<br><br>
+            The police have been following him and are now waiting outside the house to arrest him.<br><br>
+            The player must solve different puzzles within 5 minutes to find a secret exit and escape before the police arrive.
         </p>
 
         <p class="team-text">
-            Maak hier je team aan en start de Escape Room.
+            Create your team here and start the Escape Room.
         </p>
 
         <form action="/SAAD-WALEED/admin/add_team.php" method="POST" class="team-form">
@@ -34,7 +34,7 @@
             <input type="text" name="member2" placeholder="Teamlid 2" required><br><br>
             <input type="text" name="member3" placeholder="Teamlid 3"><br><br>
 
-            <button type="submit" class="play-btn">Nu Spelen</button>
+            <button type="submit" class="play-btn">Play Now</button>
         </form>
 
     </div>

@@ -9,11 +9,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $member3 = trim($_POST['member3']);
 
     $start_time = date('Y-m-d H:i:s');
-    $status = 'playing';
+    
 
     try {
-        $sql = "INSERT INTO teams (team_name, member1, member2, member3, start_time, status)
-                VALUES (:team_name, :member1, :member2, :member3, :start_time, :status)";
+        $sql = "INSERT INTO teams (team_name, member1, member2, member3, start_time)
+                VALUES (:team_name, :member1, :member2, :member3, :start_time )";
 
         $stmt = $db_connection->prepare($sql);
         $stmt->execute([
@@ -22,7 +22,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ':member2' => $member2,
             ':member3' => $member3,
             ':start_time' => $start_time,
-            ':status' => $status
         ]);
 
         $team_id = $db_connection->lastInsertId();

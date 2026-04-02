@@ -142,7 +142,7 @@ padding:12px 24px;
     <img src="/SAAD-WALEED/verpagina.jpg" alt="verlies foto">
 
 <div class="content">
-<h1>Helaas, volgende keer beter!</h1>
+<h1>Unfortunately, better luck next time!</h1>
 
 <a id="play" href="/SAAD-WALEED/rooms/room-1.php">
 Restart
