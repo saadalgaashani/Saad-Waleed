@@ -67,13 +67,30 @@ $_SESSION['start_time'] = strtotime($team['start_time']); // in seconden
   <div class="riddle-container1" id="riddleBox1">
     <p><?= htmlspecialchars($riddles[0]['riddle']); ?></p>
 
+
+    <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
     <input type="text" id="answerInput1" placeholder="Write your answer">
+
     <button id="submitAnswer1">Submit</button>
 
+    <button id="hintButton1">Hint
+       <p id="hintText1" style="display: none; color: #000000; font-style: italic; ">
+        <?= htmlspecialchars($riddles[0]['hint']); ?>
+    </p>
+    </button>
+   </div>
+
+
+
+    
     <p id="result1"></p>
 
     <script>
       const correctAnswer1 = "<?= htmlspecialchars($riddles[0]['answer'], ENT_QUOTES); ?>";
+
+      document.getElementById('hintButton1').addEventListener('click', function() {
+            document.getElementById('hintText1').style.display = 'block';
+        });
     </script>
   </div>
 
@@ -82,14 +99,28 @@ $_SESSION['start_time'] = strtotime($team['start_time']); // in seconden
   <div class="riddle-container2" id="riddleBox2">
     <p><?= htmlspecialchars($riddles[1]['riddle']); ?></p>
 
+    <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
     <input type="text" id="answerInput2" placeholder="Write your answer">
+
     <button id="submitAnswer2">Submit</button>
+
+    <button id="hintButton2">Hint
+       <p id="hintText2" style="display: none; color: #000000; font-style: italic; ">
+        <?= htmlspecialchars($riddles[1]['hint']); ?>
+    </p>
+    </button>
+   </div>
 
     <p id="result2"></p>
 
-    <script>
+     <script>
       const correctAnswer2 = "<?= htmlspecialchars($riddles[1]['answer'], ENT_QUOTES); ?>";
+
+      document.getElementById('hintButton2').addEventListener('click', function() {
+            document.getElementById('hintText2').style.display = 'block';
+        });
     </script>
+
   </div>
 
   <div id="secretSpot3"></div>
@@ -97,14 +128,28 @@ $_SESSION['start_time'] = strtotime($team['start_time']); // in seconden
   <div class="riddle-container3" id="riddleBox3">
     <p><?= htmlspecialchars($riddles[2]['riddle']); ?></p>
 
+   <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
     <input type="text" id="answerInput3" placeholder="Write your answer">
+
     <button id="submitAnswer3">Submit</button>
+
+    <button id="hintButton3">Hint
+       <p id="hintText3" style="display: none; color: #000000; font-style: italic; ">
+        <?= htmlspecialchars($riddles[2]['hint']); ?>
+    </p>
+    </button>
+   </div>
 
     <p id="result3"></p>
 
-    <script>
+     <script>
       const correctAnswer3 = "<?= htmlspecialchars($riddles[2]['answer'], ENT_QUOTES); ?>";
+
+      document.getElementById('hintButton3').addEventListener('click', function() {
+            document.getElementById('hintText3').style.display = 'block';
+        });
     </script>
+
   </div>
 
   <div id="timer">02:00</div>

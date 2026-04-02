@@ -2,7 +2,7 @@
 session_start();
 require_once('../dbcon.php');
 
-// هذا مهم جداً 👇
+
 if (!isset($_SESSION['start_time'])) {
     $_SESSION['start_time'] = time();
 }
@@ -53,6 +53,7 @@ try {
   <p><?= htmlspecialchars($team['member1']); ?></p>
   <p><?= htmlspecialchars($team['member2']); ?></p>
   <p><?= htmlspecialchars($team['member3']); ?></p>
+  
 </div>
 
 <h1>Find the three escape ways in time</h1>
@@ -66,14 +67,27 @@ try {
 
 <p><?= $riddles[0]['riddle']; ?></p>
 
-<input type="text" id="answerInput1" placeholder="Write your answer">
-<button id="submitAnswer1">Submit</button>
+<div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
+    <input type="text" id="answerInput1" placeholder="Write your answer">
+
+    <button id="submitAnswer1">Submit</button>
+
+    <button id="hintButton1">Hint
+       <p id="hintText1" style="display: none; color: #000000; font-style: italic; ">
+        <?= htmlspecialchars($riddles[0]['hint']); ?>
+    </p>
+    </button>
+   </div>
 
 <p id="result1"></p>
 
-<script>
-const correctAnswer1 = "<?= $riddles[0]['answer']; ?>";
-</script>
+ <script>
+      const correctAnswer1 = "<?= htmlspecialchars($riddles[0]['answer'], ENT_QUOTES); ?>";
+
+      document.getElementById('hintButton1').addEventListener('click', function() {
+            document.getElementById('hintText1').style.display = 'block';
+        });
+    </script>
 
 </div>
 
@@ -86,14 +100,27 @@ const correctAnswer1 = "<?= $riddles[0]['answer']; ?>";
 
 <p><?= $riddles[1]['riddle']; ?></p>
 
-<input type="text" id="answerInput2" placeholder="Write your answer">
-<button id="submitAnswer2">Submit</button>
+<div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
+    <input type="text" id="answerInput2" placeholder="Write your answer">
+
+    <button id="submitAnswer2">Submit</button>
+
+    <button id="hintButton2">Hint
+       <p id="hintText2" style="display: none; color: #000000; font-style: italic; ">
+        <?= htmlspecialchars($riddles[1]['hint']); ?>
+    </p>
+    </button>
+   </div>
 
 <p id="result2"></p>
 
-<script>
-const correctAnswer2 = "<?= $riddles[1]['answer']; ?>";
-</script>
+ <script>
+      const correctAnswer2 = "<?= htmlspecialchars($riddles[1]['answer'], ENT_QUOTES); ?>";
+
+      document.getElementById('hintButton2').addEventListener('click', function() {
+            document.getElementById('hintText2').style.display = 'block';
+        });
+    </script>
 
 </div>
 
@@ -106,14 +133,27 @@ const correctAnswer2 = "<?= $riddles[1]['answer']; ?>";
 
 <p><?= $riddles[2]['riddle']; ?></p>
 
-<input type="text" id="answerInput3" placeholder="Write your answer">
-<button id="submitAnswer3">Submit</button>
+<div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
+    <input type="text" id="answerInput3" placeholder="Write your answer">
+
+    <button id="submitAnswer3">Submit</button>
+
+    <button id="hintButton3">Hint
+       <p id="hintText3" style="display: none; color: #000000; font-style: italic; ">
+        <?= htmlspecialchars($riddles[2]['hint']); ?>
+    </p>
+    </button>
+   </div>
 
 <p id="result3"></p>
 
-<script>
-const correctAnswer3 = "<?= $riddles[2]['answer']; ?>";
-</script>
+ <script>
+      const correctAnswer3 = "<?= htmlspecialchars($riddles[2]['answer'], ENT_QUOTES); ?>";
+
+      document.getElementById('hintButton3').addEventListener('click', function() {
+            document.getElementById('hintText3').style.display = 'block';
+        });
+    </script>
 
 </div>
 <div id="timer">02:00</div>
