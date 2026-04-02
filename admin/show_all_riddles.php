@@ -1,50 +1,98 @@
-<!-- Op deze pagina zie je alle raadsels in een tabel.
-     Je ziet per raadsel: de raadsel, het antwoord, de hint en bij welke room die hoort (roomID).
- -->
- <?php
-session_start();
-require_once('dbcon.php');
+<?php
 
-// 1. Controleer of de sessie variabelen bestaan
-if (!isset($_SESSION['team_id']) || !isset($_SESSION['start_time'])) {
-    header("Location: index.php");
-    exit;
-}
+require_once('../dbcon.php');
 
-// 2. Tijd correct berekenen in seconden
-$end_time = time(); // Huidige tijd in seconden
-
-// Controleer of start_time een datum/tijd tekst is, zet dit dan om naar seconden
-$start_time_seconds = is_numeric($_SESSION['start_time']) ? $_SESSION['start_time'] : strtotime($_SESSION['start_time']);
-$time_taken = $end_time - $start_time_seconds;
-
-// Zorg ervoor dat de tijd nooit negatief is bij een foutje
-if ($time_taken < 0) {
-    $time_taken = 0;
-}
-
-//  Sla de tijd op in de database
 try {
-    $stmt = $db_connection->prepare("
-        UPDATE teams 
-        SET time_score = :time 
-        WHERE id = :id
-    ");
-
-    $stmt->execute([
-        ':time' => $time_taken,
-        ':id' => $_SESSION['team_id']
-    ]);
-
+    $stmt = $db_connection->query("SELECT * FROM riddles");
+    $alle_raadsels = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
-    die("Database Error: " . $e->getMessage());
+    die("Kan de database niet bereiken: " . $e->getMessage());
 }
-
-// 4. Stuur de speler naar de juiste pagina
-if (isset($_GET['result']) && $_GET['result'] === 'win') {
-    header("Location: win.php");
-} else {
-    header("Location: ver.php");
-}
-exit;
 ?>
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Overzicht Alle Raadsels</title>
+    <link rel="stylesheet" href="../css/home.css">
+    
+    <style>
+        body {
+            background-color: #222;
+            color: white;
+            font-family: sans-serif;
+            padding: 40px;
+            
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: stretch !important;
+        }
+
+        .admin-nav {
+            margin-top: 30px; 
+            margin-bottom: 20px;
+            text-align: center; 
+        }
+        
+        .admin-nav a {
+            color: #f1c40f; 
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 18px;
+                font-family: 'Kalam', cursive; 
+
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #333;
+        }
+        
+        th, td {
+            border: 1px solid #555;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #444;
+            color: #f1c40f;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Alle Raadsels in de Database</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Raadsel (Riddle)</th>
+                <th>Antwoord (Answer)</th>
+                <th>Hint</th>
+                <th>Room ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($alle_raadsels as $raadsel): ?>
+                <tr>
+                    <td><?= htmlspecialchars($raadsel['id']); ?></td>
+                    <td><?= htmlspecialchars($raadsel['riddle']); ?></td>
+                    <td><?= htmlspecialchars($raadsel['answer']); ?></td>
+                    <td><?= htmlspecialchars($raadsel['hint']); ?></td>
+                    <td><?= htmlspecialchars($raadsel['roomId']); ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+
+    <div class="admin-nav">
+        <a href="../index.php">Terug naar Home</a>
+        <a href="add_riddle.php">Nieuw raadsel toevoegen</a>
+    </div>
+
+</body>
+</html>

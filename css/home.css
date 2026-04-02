@@ -25,6 +25,21 @@ font-family: "Bpmf Huninn", sans-serif;
   font-style: normal;
 
 }
+.nav {
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    text-align: center;
+    z-index: 100;
+} 
+.nav a {
+    color: #f1c40f; /* Mooie gele kleur */
+    text-decoration: none;
+    margin-right: 20px; /* Ruimte tussen de linkjes */
+    font-size: 20px;
+    font-family: 'Kalam', cursive; 
+        text-shadow: 2px 2px 4px black; 
+}
 
 .home{
 width:min(1100px,90%);
@@ -33,6 +48,8 @@ gap:50px;
 align-items:center;
 justify-content:space-between;
 }
+
+
 
 .text{
 max-width:520px;

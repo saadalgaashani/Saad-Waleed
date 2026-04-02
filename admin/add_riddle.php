@@ -1,8 +1,6 @@
 <?php
-// 1. Maak verbinding met de database.
 require_once('../dbcon.php');
 
-// 2. Controleer of het formulier is verzonden
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     $riddle = $_POST['riddle'];
@@ -11,7 +9,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $room_id = $_POST['room_id']; 
 
     try {
-        // Zet de gegevens in de database
         $sql = "INSERT INTO riddles (riddle, answer, hint, roomId) VALUES (:riddle, :answer, :hint, :roomId)";
         $stmt = $db_connection->prepare($sql);
         
@@ -22,31 +19,112 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             ':roomId' => $room_id
         ]);
 
-        // 3. Stuur de admin direct terug naar de homepagina
         header("Location: ../index.php");
-        exit(); // Zorg ervoor dat het script hier stopt en niet verder laadt
-
+        exit(); 
     } catch (PDOException $e) {
-        // Sla de foutmelding op om later op de pagina te tonen
-        $foutmelding = "<p style='color: red;'>Er ging iets mis: " . $e->getMessage() . "</p>";
+        $foutmelding = "<p style='color: red; text-align: center;'>Er ging iets mis: " . $e->getMessage() . "</p>";
     }
 }
 ?>
 
-<h2>Add Riddle Page</h2>
-
-<?php 
-// Als er een fout was, laat die dan hier zien
-if (isset($foutmelding)) { 
-    echo $foutmelding; 
-} 
-?>
-
-<form action="/SAAD-WALEED/admin/add_riddle.php" method="POST" class="team-form">
-    <input type="text" name="riddle" placeholder="riddle" required><br><br>
-    <input type="text" name="answer" placeholder="answer" required><br><br>
-    <input type="text" name="hint" placeholder="hint" required><br><br>
-    <input type="number" name="room_id" placeholder="room ID" required><br><br>
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Nieuw Raadsel Toevoegen</title>
     
-    <button type="submit" class="play-btn">Save</button>
-</form>
+    <link rel="stylesheet" href="../css/home.css">
+    
+    <style>
+        body {
+            color: white;
+            font-family: sans-serif;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important; 
+            min-height: 100vh; 
+            padding-top: 40px;
+        }
+
+        .admin-nav {
+            margin-bottom: 30px;
+            text-align: center;
+            z-index: 10; 
+        }
+        
+        .admin-nav a {
+            color: #f1c40f; 
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 18px;
+            text-shadow: 2px 2px 4px black; 
+        }
+
+        h2 {
+            color: #f1c40f; 
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px black;
+            z-index: 10;
+        }
+
+        form {
+            background-color: rgba(44, 41, 41, 0.85); 
+            padding: 30px;
+            border-radius: 8px; 
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.8); 
+            z-index: 10;
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 4px;
+            box-sizing: border-box; 
+        }
+
+        button {
+            background-color: #f1c40f;
+            color: #222;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #d4ac0d; 
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-nav">
+        <a href="../index.php">Terug naar Home</a>
+        <a href="show_all_riddles.php">Bekijk alle raadsels</a>
+    </div>
+
+    <h2>Add Riddle Page</h2>
+
+    <?php 
+    if (isset($foutmelding)) { 
+        echo $foutmelding; 
+    } 
+    ?>
+
+    <form action="/SAAD-WALEED/admin/add_riddle.php" method="POST">
+        <input type="text" name="riddle" placeholder="Riddle" required>
+        <input type="text" name="answer" placeholder="Answer" required>
+        <input type="text" name="hint" placeholder="Hint" required>
+        <input type="number" name="room_id" placeholder="Room ID (bijv. 1, 2 of 3)" required>
+        
+        <button type="submit">Save</button>
+    </form>
+
+    </body>
+</html>

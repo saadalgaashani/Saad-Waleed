@@ -11,7 +11,13 @@
 </head>
 
 <body>
-    <nav> <a href="/SAAD-WALEED/admin/add_riddle.php">Add Riddle</a></nav>
+    <div class="nav">  
+        <a href="/SAAD-WALEED/admin/add_riddle.php">Add Riddle</a>
+        <a href="/SAAD-WALEED/admin/show_all_riddles.php">Show All Riddles</a>
+        <a href="/SAAD-WALEED/admin/show_all_teams.php">Show All Teams</a>
+ </div>
+        
+   
    
 
 <div class="home">
