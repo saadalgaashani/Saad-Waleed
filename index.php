@@ -11,6 +11,8 @@
 </head>
 
 <body>
+    <nav> <a href="/SAAD-WALEED/admin/add_riddle.php">Add Riddle</a></nav>
+   
 
 <div class="home">
 
