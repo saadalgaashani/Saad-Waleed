@@ -14,7 +14,7 @@ try {
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <title>Overzicht Alle Raadsels</title>
+    <title>Overview of All Riddles</title>
     <link rel="stylesheet" href="../css/home.css">
     
     <style>
@@ -64,7 +64,7 @@ try {
 </head>
 <body>
 
-    <h2>Alle Raadsels in de Database</h2>
+    <h2>Overview of All Riddles in the Database</h2>
 
     <table>
         <thead>
@@ -90,8 +90,8 @@ try {
     </table>
 
     <div class="admin-nav">
-        <a href="../index.php">Terug naar Home</a>
-        <a href="add_riddle.php">Nieuw raadsel toevoegen</a>
+        <a href="../index.php">Back to Home</a>
+        <a href="add_riddle.php">Add New Riddle</a>
     </div>
 
 </body>

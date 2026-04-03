@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <title>Nieuw Raadsel Toevoegen</title>
+    <title>Add New Riddle</title>
     
     <link rel="stylesheet" href="../css/home.css">
     
@@ -107,8 +107,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     <div class="admin-nav">
-        <a href="../index.php">Terug naar Home</a>
-        <a href="show_all_riddles.php">Bekijk alle raadsels</a>
+        <a href="../index.php">Back to Home</a>
+        <a href="show_all_riddles.php">View All Riddles</a>
     </div>
 
     <h2>Add Riddle Page</h2>

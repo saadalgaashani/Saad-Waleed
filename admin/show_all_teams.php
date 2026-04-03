@@ -13,7 +13,7 @@ try {
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <title>Overzicht Alle Teams</title>
+    <title>Overview of All Teams</title>
     <link rel="stylesheet" href="../css/home.css">
     
     <style>
@@ -57,7 +57,7 @@ try {
 </head>
 <body>
 
-    <h2>Alle Teams en Scores</h2>
+    <h2>Overview of All Teams and Scores</h2>
 
     <table>
         <thead>
@@ -96,8 +96,8 @@ try {
     </table>
 
     <div class="admin-nav">
-        <a href="../index.php">Terug naar Home</a>
-        <a href="show_all_riddles.php">Bekijk alle raadsels</a>
+        <a href="../index.php">Back to Home</a>
+        <a href="show_all_riddles.php">View All Riddles</a>
     </div>
 
 </body>
