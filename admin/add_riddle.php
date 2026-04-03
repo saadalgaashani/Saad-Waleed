@@ -58,6 +58,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             margin-right: 15px;
             font-size: 18px;
             text-shadow: 2px 2px 4px black; 
+        font-family: 'Kalam', cursive; 
+
         }
 
         h2 {
