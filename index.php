@@ -38,7 +38,7 @@ session_start();
         <p class="description">
             The escape room takes place in an old and abandoned house where a spy is hiding after stealing secret information.<br><br>
             The police have been following him and are now waiting outside the house to arrest him.<br><br>
-            The player must solve different puzzles within 5 minutes to find a secret exit and escape before the police arrive.
+            The player must solve different puzzles within 4 minutes to find a secret exit and escape before the police arrive.
         </p>
 
         <p class="team-text">
