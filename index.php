@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="nl">
 
@@ -11,11 +15,16 @@
 </head>
 
 <body>
-    <div class="nav">  
+    <div class="nav">
+    <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true): ?>
         <a href="/SAAD-WALEED/admin/add_riddle.php">Add Riddle</a>
         <a href="/SAAD-WALEED/admin/show_all_riddles.php">Show All Riddles</a>
         <a href="/SAAD-WALEED/admin/show_all_teams.php">Show All Teams</a>
- </div>
+        <a href="/SAAD-WALEED/logout.php">Logout</a>
+    <?php else: ?>
+        <a href="/SAAD-WALEED/login.php">Admin</a>
+    <?php endif; ?>
+</div>
         
    
    
