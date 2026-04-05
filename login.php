@@ -41,13 +41,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     background-position: center;
     background-repeat: no-repeat;
 
-    height: 100vh;          /* بدل min-height */
+    height: 100vh;          
     display: flex;
     align-items: center;
     justify-content: center;
 
-    overflow: hidden;       /* يمنع النزول والطلوع */
-    margin: 0;              /* مهم جدًا */
+    overflow: hidden;      /* Niet omhoog of omlaag */   
+    margin: 0;              
 }
       form {
             background-color: rgba(44, 41, 41, 0.85); 
